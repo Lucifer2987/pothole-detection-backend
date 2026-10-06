@@ -1,0 +1,8 @@
+names:
+- pothole
+- crack
+nc: 2
+path: P:/pothole-detection-backend/data/processed/sanity
+test: P:/pothole-detection-backend/data/processed/test/images
+train: images
+val: P:/pothole-detection-backend/data/processed/val/images

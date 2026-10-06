@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgis/postgis:16-3.4          # PostGIS-enabled Postgres 16
+    container_name: pothole_postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER:     postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB:       pothole_db
+    ports:
+      - "5432:5432"                        # expose to host so SQLAlchemy can connect
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
